@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="atividade.html.html">Inicio</a></li> 
+        </ul>
+    </nav>
+    <h1>Cadastro Usuario</h1>
+    <form id="cadastroform">
+    <label for="nomeESobrenome">Nome e Sobrenome</label>
+            <input type="text" id="nomeESobrenome" name="nome"><br><br>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone"><br><br>
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha"><br><br>
+
+            <button type="button" onclick="cadastrarusuario()">Cadastrar</button>
+
+        </form>
+
+        <div id="mensagem"></div>
+          <script>
+            function cadastrarusuario(){
+                var nome = document.getElementsById("nome").value;
+                var email = document.getElementsById("email").value;
+                var telefone = document.getElementsById("telefone").value;
+                var senha = document.getElementsById("senha").value;
+
+                if (nome === ""|| email === "" || telefone === ""  || senha === ""){
+                    document.getElementById("mensagem").innerHTML = "Por favor, preencha todos os campos" return;
+                }
+
+         var Usuario ={
+            nome : nome,
+            email : email,
+            telefone : telefone,
+            senha : senha
+         }
+          console.log("Usuário Cadastro; " , Usuario);
+          document.getElementById("Cadastroform").reset();
+          document.getElementById("mensagem").innerHTML="Cadastro realizado com sucesso"
+
+            
+          </script>
+</body>
+</html>
